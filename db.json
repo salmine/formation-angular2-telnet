@@ -1,0 +1,24 @@
+{
+  "formation": [
+    {
+      "id": 2,
+      "title": "PHP Symphony2",
+      "description": "PHP desc"
+    },
+    {
+      "title": "Elastic Search1",
+      "description": "elastic search",
+      "id": 300002
+    },
+    {
+      "title": "salmine",
+      "description": "sakka",
+      "id": 300004
+    },
+    {
+      "title": "Micro services",
+      "description": "KPI,Eportal-common,...",
+      "id": 300006
+    }
+  ]
+}

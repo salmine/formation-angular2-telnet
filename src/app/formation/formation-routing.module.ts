@@ -5,9 +5,10 @@ import { FormationDetailsComponent } from './formation-details/formation-details
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [ {path: 'details/:id', component: FormationDetailsComponent},
-  {path : '',component: FormationListComponent},
-  {path : 'form/:id',component: FormationFormComponent}];
+const routes: Routes = [{ path: 'details/:id', component: FormationDetailsComponent },
+{ path: '', component: FormationListComponent },
+{ path: 'form/:id', component: FormationFormComponent },
+{ path: 'form', component: FormationFormComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
