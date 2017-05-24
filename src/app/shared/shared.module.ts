@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { ReverseStrPipe } from './pipes/reverse-str.pipe';
 
 @NgModule({
   imports: [
@@ -12,9 +14,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HttpModule
   ],
    exports: [
-    NavbarComponent
+    NavbarComponent,
+    HighlightDirective,
+    ReverseStrPipe
   ],
-  declarations: [NavbarComponent],
+  declarations: [NavbarComponent, HighlightDirective, ReverseStrPipe],
   providers : [FormationService]
 
 })

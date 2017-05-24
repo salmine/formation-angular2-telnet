@@ -4,13 +4,22 @@
 
 <pre> {{formations |json }} </pre>
 
+<table class="table">
+  <th>TITLE</th>
+  <th>ID</th>
+  <th>Actions</th>
+  <tr *ngFor="let formation of formations">
+    <td>
+      <p>{{formation.title}}</p>
+    </td>
+    <td>
+      <p>{{formation.id | currency : 'EUR': true }}</p>
+    </td>
 
-<ul>
-  <li *ngFor="let formation of formations">
-    <p>{{formation.title}}</p>
-    <p>{{formation.id | currency : 'EUR': true }}</p>
-    <p><a [routerLink] = "['form', formation.id]" >Update </a></p>
-    <p><a [routerLink] = "['details', formation.id]" >View Details</a></p>
-    <p><a (click)="delete(formation.id)" >Delete</a></p>
-  </li>
-</ul>
+    <td>
+      <p><a [routerLink]="['form', formation.id]">Update </a></p>
+      <p><a [routerLink]="['details', formation.id]">View Details</a></p>
+      <p><a (click)="delete(formation.id)">Delete</a></p>
+    </td>
+  </tr>
+</table>

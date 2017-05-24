@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormationService } from './../../shared/services/formation.service';
 import { Formation } from './../../shared/models/formation';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 
 
@@ -19,7 +19,8 @@ export class FormationFormComponent implements OnInit, OnDestroy {
   formation: Formation;
   sub: Array<Subscription> = [];
   formations: Array<Formation> = [];
-  constructor(private formationService: FormationService, private route: ActivatedRoute) {
+  formationFormReact: FormGroup;
+  constructor(private formationService: FormationService, private route: ActivatedRoute, private formBuilder: FormBuilder) {
 
     const sub = this.route.params.subscribe(params => {
       this.id = params['id'];
@@ -30,12 +31,26 @@ export class FormationFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.initFormReact();
     this.formation = new Formation();
     this.formation.title = 'New Title';
     this.formation.description = 'New Description';
 
 
   }
+
+  initFormReact() {
+    this.formationFormReact = this.formBuilder.group({
+      title: new FormControl('SALMINE', Validators.required),
+      description : new FormControl('formation')
+    });
+  }
+
+save() {
+   console.log(this.formationFormReact.value);
+   console.log(this.formationFormReact.controls.title.value);
+   console.log(this.formationFormReact.controls.description.value);
+}
 
     find(id) {
     this.formationService.find(id).subscribe(data => {

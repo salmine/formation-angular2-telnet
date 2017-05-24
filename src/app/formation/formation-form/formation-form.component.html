@@ -17,3 +17,18 @@
 
 <pre>{{formation | json}}</pre>
 
+
+<form novalidate [formGroup]="formationFormReact" (ngSubmit)="save()">
+  <div class="form-group" [ngClass]="{'has-error':!formationFormReact.controls['title'].valid && formationFormReact.controls['title'].touched}">
+  <label for="title">title</label>
+  <input type="text" class="form-control" formControlName="title">
+  </div>
+  <br>
+
+  <label for="description">description</label>
+  <input type="text" class="form-control" formControlName="description">
+  <br>
+
+  <button class="btn btn-primary" type="submit" [disabled]="!formationFormReact.valid">Add</button>
+  <button class="btn btn-primary" type="reset">reset</button>
+</form>

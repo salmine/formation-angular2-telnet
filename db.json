@@ -3,7 +3,7 @@
     {
       "id": 2,
       "title": "PHP Symphony2",
-      "description": "PHP desc"
+      "description": "PHP formation"
     },
     {
       "title": "Elastic Search1",
@@ -11,14 +11,19 @@
       "id": 300002
     },
     {
-      "title": "salmine",
-      "description": "sakka",
-      "id": 300004
-    },
-    {
       "title": "Micro services",
       "description": "KPI,Eportal-common,...",
       "id": 300006
+    },
+    {
+      "title": "Angular2",
+      "description": "formation angular2 telnet",
+      "id": 300007
+    },
+    {
+      "title": "JAVA / J2EE",
+      "description": "j2ee",
+      "id": 300008
     }
   ]
 }

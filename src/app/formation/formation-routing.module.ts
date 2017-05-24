@@ -4,11 +4,18 @@ import { FormationDetailsComponent } from './formation-details/formation-details
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormationContainerComponent } from 'app/formation/formation-container/formation-container.component';
+import { FormationListContainerComponent } from 'app/formation/formation-list-container/formation-list-container.component';
 
-const routes: Routes = [{ path: 'details/:id', component: FormationDetailsComponent },
-{ path: '', component: FormationListComponent },
-{ path: 'form/:id', component: FormationFormComponent },
-{ path: 'form', component: FormationFormComponent }];
+const routes: Routes = [
+  {
+    path: '', component: FormationContainerComponent, children: [
+      { path: 'details/:id', component: FormationDetailsComponent },
+      { path: '', component: FormationListContainerComponent },
+      { path: 'form/:id', component: FormationFormComponent },
+      { path: 'form', component: FormationFormComponent }]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
